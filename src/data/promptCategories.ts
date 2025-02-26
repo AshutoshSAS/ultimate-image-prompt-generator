@@ -1,4 +1,3 @@
-
 export interface PromptElement {
   name: string;
   value: string;
@@ -119,4 +118,63 @@ export const negativePrompts: string[] = [
   "underexposed",
   "bad composition",
   "amateur",
+];
+
+export interface Preset {
+  name: string;
+  description: string;
+  basePrompt: string;
+  elements: Record<string, number>;
+}
+
+export const presets: Preset[] = [
+  {
+    name: "Professional Portrait",
+    description: "Perfect for high-quality portrait photography",
+    basePrompt: "professional portrait of a person",
+    elements: {
+      "photorealistic": 2,
+      "85mm f/1.4": 1,
+      "perfect bokeh effect": 1,
+      "professional studio lighting": 2,
+      "sharp focus": 1,
+      "detailed skin texture": 1
+    }
+  },
+  {
+    name: "Cinematic Scene",
+    description: "Movie-quality dramatic shot",
+    basePrompt: "cinematic scene in a city",
+    elements: {
+      "cinematic": 2,
+      "dramatic lighting": 1,
+      "Unreal Engine 5 render": 1,
+      "wide angle shot": 1,
+      "volumetric lighting": 1
+    }
+  },
+  {
+    name: "Nature Photography",
+    description: "Beautiful landscape photography",
+    basePrompt: "beautiful landscape at sunset",
+    elements: {
+      "8K UHD": 2,
+      "golden hour lighting": 2,
+      "HDR": 1,
+      "rule of thirds composition": 1,
+      "detailed environment": 1
+    }
+  },
+  {
+    name: "Product Shot",
+    description: "Professional product photography",
+    basePrompt: "product photography of a luxury item",
+    elements: {
+      "macro lens": 1,
+      "professional studio lighting": 2,
+      "sharp focus": 2,
+      "detailed fabric texture": 1,
+      "minimalist composition": 1
+    }
+  }
 ];
